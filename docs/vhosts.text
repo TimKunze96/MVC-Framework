@@ -1,0 +1,20 @@
+<VirtualHost mvc.test:80>
+    ServerAdmin something@yourdomain.io
+    DocumentRoot "E:/xampp/htdocs/YouTube/MVC/public"
+    ServerName mvc.test
+    ServerAlias www.mvc.test
+</VirtualHost>
+
+<VirtualHost mvc.test:443>
+    DocumentRoot "E:/xampp/htdocs/YouTube/MVC/public"
+    ServerName mvc.test
+    ServerAlias www.mvc.test
+    SSLEngine on
+    SSLCertificateFile "conf/ssl.crt/server.crt" 
+    SSLCertificateKeyFile "conf/ssl.key/server.key"
+    <Directory "E:/xampp/htdocs/YouTube/MVC/public">
+        Options All
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
